@@ -1,0 +1,11 @@
+📋 <b>[SANDBOX WHITELIST] IP không còn hoạt động</b>{{ page_label }}
+Time: {{ time_display }} (GMT+7)
+
+{{ count }} IP trong list <code>{{ list_name }}</code> không gọi domain sandbox nào trong {{ lookback_days }} ngày — xem xét gỡ qua Terraform (bot không tự xoá):
+{% for ip, comment in items %}
+{% if comment %}
+• <code>{{ ip }}</code> — {{ comment }}
+{% else %}
+• <code>{{ ip }}</code>
+{% endif %}
+{% endfor %}

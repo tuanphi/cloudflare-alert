@@ -1,0 +1,7 @@
+🧹 <b>[CLEANUP] Block List</b>{{ page_label }}
+Time: {{ time_display }} (GMT+7)
+
+Đã gỡ <b>{{ count }}</b> IP khỏi block list (không có request nào trong {{ lookback_days }} ngày qua):
+{% for ip in ips %}
+• <code>{{ ip }}</code>
+{% endfor %}

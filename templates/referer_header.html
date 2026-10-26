@@ -1,0 +1,7 @@
+{% if is_continuation %}
+🎰 <b>[REFERER]</b> (tiếp theo{{ page_label }})
+{% else %}
+🎰 <b>[REFERER] Suspicious Domains Detected</b>{{ page_label }}
+Time: {{ time_display }} (GMT+7)
+Khoảng quét: {{ scan_window }} — {{ domain_count }} domain lạ, {{ total_fmt }} reqs
+{% endif %}

@@ -1,0 +1,20 @@
+<b>{{ referer }}</b> — {{ count_fmt }} reqs
+{% for host, host_count in hosts %}
+  — {{ host }} ({{ host_count }} reqs)
+{% endfor %}
+{% if ips %}
+  IP:
+{% for ip, count, country in ips %}
+    — <code>{{ ip }}</code> ({{ count }} reqs) {{ country }}
+{% endfor %}
+{% endif %}
+{% if display_paths %}
+{% if prefix %}
+  Path: {{ prefix }}
+{% else %}
+  Path:
+{% endif %}
+{% for path, count in display_paths %}
+    — {{ path }} ({{ count }} reqs)
+{% endfor %}
+{% endif %}

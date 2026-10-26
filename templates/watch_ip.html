@@ -1,0 +1,34 @@
+⚠️ <b>[WATCH IP] Blocked</b> — {{ severity_label }}
+Time: {{ time_display }} (GMT+7)
+
+IP: <code>{{ ip }}</code>
+Count: {{ count }} reqs bị block
+{{ reason }}
+{{ merchant_line }}
+
+{% if host %}
+Host: {{ host }}
+{% endif %}
+{% if path %}
+Path: {{ path }}
+{% endif %}
+{% if method %}
+Method: {{ method }} | {{ protocol }}
+{% endif %}
+{% if status %}
+Status: {{ status }}
+{% endif %}
+{% if referer %}
+Referer: {{ referer }}
+{% endif %}
+{% if country or isp %}
+Country: {{ country }} | ISP: {{ isp }} (AS{{ asn }})
+{% endif %}
+{% if ua %}
+UA: {{ ua }}
+{% endif %}
+{% if ray %}
+Ray ID: {{ ray }}
+{% endif %}
+
+👉 <a href="{{ dashboard_url }}">Xem events của IP này</a>

@@ -1,0 +1,30 @@
+🚨 <b>[ATTACK] Cloudflare Security Alert</b> — {{ severity_label }}
+Zone: <b>g-pay.vn</b>
+Time: {{ time_display }} (GMT+7)
+
+Total visits ({{ poll_window }}): <b>{{ total_visits_fmt }}</b>
+Blocked requests: <b>{{ total_blocked_fmt }}</b>
+
+<b>Top attacking IPs:</b>
+{% for ip in ips %}
+• <code>{{ ip.ip }}</code> — {{ ip.count }} reqs — {{ ip.severity_label }}
+  {{ ip.country }} | ISP: {{ ip.isp }} (AS{{ ip.asn }})
+{% if ip.host %}
+  Host: {{ ip.host }}
+{% endif %}
+{% if ip.ua %}
+  UA: {{ ip.ua }}
+{% endif %}
+  {{ ip.reason }}
+  {{ ip.merchant_line }}
+{% if ip.block_line %}
+  {{ ip.block_line }}
+{% endif %}
+  Paths:
+{% for path, count in ip.paths %}
+  — {{ path }} ({{ count }} reqs)
+{% endfor %}
+
+👉 <a href="{{ ip.events_url }}">Xem events của IP {{ ip.ip }}</a>
+
+{% endfor %}

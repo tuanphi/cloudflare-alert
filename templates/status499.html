@@ -1,0 +1,12 @@
+🟠 <b>[499] High Client Closed Request</b>
+Host: <b>{{ host }}</b>
+Time: {{ time_display }} (GMT+7)
+
+Total 499 ({{ poll_window }}): <b>{{ total_fmt }}</b>
+
+<b>Top Path:</b>
+{% for line_url, path, count, country in top_paths %}
+• <a href="{{ line_url }}">{{ path }}</a> — {{ count }} reqs {{ country }}
+{% endfor %}
+
+👉 <a href="{{ dashboard_url }}">Xem chi tiết 499 trên dashboard</a>
